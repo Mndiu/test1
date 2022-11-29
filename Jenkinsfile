@@ -31,6 +31,6 @@ agent any
                 sh 'kubectl apply -f service.yaml'
             }
         }   
-        
+    } 
 
     }
