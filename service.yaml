@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: forkube-jenkins
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 8015
+  selector:
+    app: forkube-jenkins

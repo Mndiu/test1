@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: forkube-jenkins
+
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: forkube-jenkins
+  template:
+    metadata:
+      labels:
+        app: forkube-jenkins
+
+    spec:
+      containers:
+        - name: forkube-jenkins
+          image: 562278399407.dkr.ecr.us-east-1.amazonaws.com/forkube-jenkins:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8015
+              protocol: TCP
